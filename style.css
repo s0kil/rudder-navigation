@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  bottom: 0;
+  padding: 10px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.container .menu {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  right: calc(100vw/2 - 50px / 2);
+  overflow: hidden;
+  background-color: #4ad6bd;
+  border-radius: 35px;
+  z-index: 100;
+}
+
+button {
+  background-color: #4ad6bd;
+  border-radius: 35px;
+  border: none;
+  padding: 10px;
+}
+
+#button1 {
+  background-color: #00a385;
+  position: absolute;
+  left: 20px;
+}
+
+#button2 {
+  background-color: #00a385;
+  position: absolute;
+  right: 20px;
+}
+
+.container.expand #button1 {
+  animation: left-button 1s 1 forwards;
+}
+
+.container.collapse #button1 {
+  animation: left-button 1s 1 reverse;
+}
+
+.container.expand #button2 {
+  animation: right-button 1s 1 forwards;
+}
+
+.container.collapse #button2 {
+  animation: right-button 1s 1 reverse;
+}
+
+.container.expand .menu {
+  animation: menu 1s 1 forwards;
+}
+
+.container.collapse .menu {
+  animation: menu 1s 1 reverse;
+}
+
+.container.expand #plus {
+  animation: plus 1s 1 forwards;
+}
+
+.container.collapse #plus {
+  animation: plus 1s 1 reverse;
+}
+
+.bg-icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+
+.container button .search {
+  background-image: url(./images/search.png);
+}
+
+.container button .new-message {
+  background-image: url(./images/new-message.png);
+}
+
+.container .menu button .plus {
+  background-image: url(./images/plus.png);
+}
+
+.container .menu button .navigate {
+  background-image: url(./images/navigate.png);
+}
+
+.container .menu button .profile {
+  background-image: url(./images/profile.png);
+}
+
+.container .menu button .messages {
+  background-image: url(./images/messages.png);
+}
+
+.container .menu button .setup {
+  background-image: url(./images/setup.png);
+}
+
+@keyframes right-button {
+  from {
+    transform: rotate(0deg);
+    right: 20px;
+  }
+
+  to {
+    transform: rotate(360deg);
+    right: -40px;
+  }
+}
+
+@keyframes left-button {
+  from {
+    transform: rotate(0deg);
+    left: 20px;
+  }
+
+  to {
+    transform: rotate(-360deg);
+    left: -40px;
+  }
+}
+
+@keyframes menu {
+  from {
+    width: 50px;
+    right: calc(100vw/2 - 50px / 2);
+  }
+
+  to {
+    width: 300px;
+    right: calc(100vw/2 - 300px / 2);
+  }
+}
+
+@keyframes plus {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
