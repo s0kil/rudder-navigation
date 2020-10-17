@@ -55,8 +55,13 @@ button {
   right: 20px;
 }
 
+:root {
+  --play-time: 1s;
+}
+
 .container.expand #button1 {
-  animation: left-button 1s 1 forwards;
+  /* animation-play-state: running; */
+  animation: left-button var(--play-time) infinite alternate paused;
 }
 
 .container.collapse #button1 {
@@ -64,7 +69,7 @@ button {
 }
 
 .container.expand #button2 {
-  animation: right-button 1s 1 forwards;
+  animation: right-button 1s infinite alternate paused;
 }
 
 .container.collapse #button2 {
@@ -72,7 +77,7 @@ button {
 }
 
 .container.expand .menu {
-  animation: menu 1s 1 forwards;
+  animation: menu 1s infinite alternate paused;
 }
 
 .container.collapse .menu {
@@ -80,7 +85,7 @@ button {
 }
 
 .container.expand #plus {
-  animation: plus 1s 1 forwards;
+  animation: plus 1s infinite alternate paused;
 }
 
 .container.collapse #plus {
